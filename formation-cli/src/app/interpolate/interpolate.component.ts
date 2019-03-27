@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Formation} from "./model/Formation";
+import {Formation} from "../model/Formation";
 
 @Component({
   selector: 'app-interpolate',
@@ -123,6 +123,10 @@ export class InterpolateComponent implements OnInit {
         return true;
     }
 
+  }
+
+  handleFormationSelected(formation) {
+    console.log('Formation selected', formation);
   }
 
 }

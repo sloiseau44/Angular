@@ -38,3 +38,12 @@
   <p *ngSwitchCase="1">Une formation disponible : {{formations[0].nom}}</p>
   <p *ngSwitchDefault>Formations disponibles : {{formations.length}}</p>
 </div>
+
+<ul>
+  <li *ngFor="let formation of formations">
+    <app-formation-item
+      [formation]="formation"
+      (formationSelected)="handleFormationSelected($event)">
+    </app-formation-item>
+  </li>
+</ul>
