@@ -126,7 +126,7 @@ export class InterpolateComponent implements OnInit {
   }
 
   handleFormationSelected(formation) {
-    console.log('Formation selected', formation);
+    window.alert('Formation selected ' + formation.nom);
   }
 
 }

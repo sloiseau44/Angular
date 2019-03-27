@@ -1,0 +1,8 @@
+<label for="mc">Todo réalisé</label>
+<input
+  type="checkbox"
+  name="mc"
+  id="mc"
+  [checked]="todo.isDone"
+  (change)="checkIsDone()"
+>

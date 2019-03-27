@@ -1,0 +1,6 @@
+<div>
+  <h4 [ngClass]="{'line' : todo.isDone}">{{todo.title | uppercase}}</h4>
+  <div>
+    <app-todo-check-box [todo]="todo" (todoCheckIsDone)="checkIsDone($event)"></app-todo-check-box>
+  </div>
+</div>

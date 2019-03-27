@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let todo of todoList">
+    <app-todo-item [todo]="todo" (todoCheckIsDone)="checkIsDone($event)"></app-todo-item>
+  </li>
+</ul>
+
+<div [ngSwitch]="todoList.length">
+  <p *ngSwitchCase="0">Vous n’avez aucun todo</p>
+  <p *ngSwitchCase="1">La liste comporte 1 élément</p>
+  <p *ngSwitchDefault>La liste comporte {{todoList.length}} éléments</p>
+</div>
