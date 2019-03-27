@@ -7,7 +7,7 @@ export function nouvelleFormation (){
     stagiaire1.boire(new Boisson("Whyskry", true, true));
     stagiaire2.toString();
 
-    let formateur = new Formateur([new Connaissance("Java8", 15), new Connaissance("bloc-note", 58)], "Jean", "Régis", Genre.Homme, Religion.Atheist);
+    let formateur = new Formateur([new Connaissance("Java8", 15), new Connaissance("bloc-note", 58), new Connaissance("Tipiac", 1)], "Jean", "Régis", Genre.Homme, Religion.Atheist);
 
     console.log(formateur.enseigne());
 

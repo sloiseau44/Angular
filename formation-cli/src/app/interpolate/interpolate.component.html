@@ -1,0 +1,40 @@
+
+
+
+
+
+
+
+<div [hidden]="isHidden"><p [style.color]="isColor">{{getFullName()}}</p></div>
+<p>
+  {{formation1.nom}} {{formation1.description}}<br>
+  Optional: {{formationJS?.nom}}
+</p>
+<button (click)="handleClick()">{{bouton}}</button>
+<p *ngIf="pHidden" (mouseover)="mouseOver()" (mouseout)="mouseOut()">Test évenementiel</p>
+
+
+<div>
+  <input type="text"#customVariable placeholder="Saisir une valeur">
+  <div>test variable locale : {{customVariable.value}}</div>
+</div>
+
+<div>
+  <button (click)="customVariable.focus()">Focus the input</button>
+</div>
+
+
+<p *ngIf="pHidden; else title">{{formation1.description}}</p>
+<ng-template #title><p>{{formation1.nom}}</p></ng-template>
+
+<ul>
+  <li *ngFor="let formation of formations; index as i; first as f; last as l; even as e">
+    <p [ngClass]="{'colorRed':red(f,l), 'colorGreen':green(f,l), 'colorBlack':black(f,l), 'even':e}">{{i+1}} - {{formation.nom | titlecase}} {{formation.prix |currency:'EUR'}} {{formation.dateDebut | date:'dd/MM/yyyy'}} {{formation.dateFin | date:'dd/MM/yyyy'}}</p>
+  </li>
+</ul>
+
+<div [ngSwitch]="formations.length">
+  <p *ngSwitchCase="0">Aucune formation disponibles</p>
+  <p *ngSwitchCase="1">Une formation disponible : {{formations[0].nom}}</p>
+  <p *ngSwitchDefault>Formations disponibles : {{formations.length}}</p>
+</div>
