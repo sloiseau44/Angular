@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Todo} from '../model/Todo';
-import _ from 'lodash';
+import {TodoServices} from "../services/TodoServices";
 
 @Component({
   selector: 'app-todo-container',
@@ -15,22 +15,20 @@ export class TodoContainerComponent implements OnInit {
   @Output()
   todoCheckIsDone:EventEmitter<Todo> = new EventEmitter<Todo>();
 
-  constructor() { }
+  constructor(private todoServices:TodoServices) { }
 
-  checkIsDone(todo){
-    const todoToUpdate = this.todoList.find(item => item.title === todo.title);
-    const otherTodo = _.without(this.todoList, todoToUpdate);
-
-    this.todoList = [...otherTodo, {...todoToUpdate, isDone : !todoToUpdate.isDone}];
-
+  async checkIsDone(todo){
+    this.todoList = await this.todoServices.checkIsDone(todo);
+    /*this.todoServices.checkIsDone(todo)
+      .then((todoFinal) =>{this.todoList = todoFinal});*/
   }
 
-  handleTodoAdd(todo) {
-    this.todoList = [...this.todoList, todo];
+  async handleTodoAdd(todo) {
+    this.todoList = await this.todoServices.handleTodoAdd(todo);
   }
 
-  handleReset(){
-    this.todoList=[];
+  async handleReset(){
+    this.todoList = await this.todoServices.handleReset();
   }
 
   ngOnInit() {
