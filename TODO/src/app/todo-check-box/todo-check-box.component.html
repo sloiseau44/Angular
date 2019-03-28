@@ -1,8 +1,15 @@
-<label for="mc">Todo réalisé</label>
-<input
+
+<mat-checkbox name="mc"
+              id="mc"
+              [checked]="todo.isDone"
+              (change)="checkIsDone()">
+  <label for="mc">Todo réalisé</label>
+</mat-checkbox>
+
+<!--<input
   type="checkbox"
   name="mc"
   id="mc"
   [checked]="todo.isDone"
   (change)="checkIsDone()"
->
+>-->

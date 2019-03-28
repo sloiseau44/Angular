@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatListModule, MatCheckboxModule, MatInputModule, MatButtonModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
@@ -18,7 +20,14 @@ import { TodoCheckBoxComponent } from './todo-check-box/todo-check-box.component
     TodoCheckBoxComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatListModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCheckboxModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
