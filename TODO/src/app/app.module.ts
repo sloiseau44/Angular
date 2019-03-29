@@ -7,6 +7,7 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodoContainerComponent } from './todo-container/todo-container.component';
 import { TodoCheckBoxComponent } from './todo-check-box/todo-check-box.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TodoCheckBoxComponent } from './todo-check-box/todo-check-box.component
     TodoCheckBoxComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
