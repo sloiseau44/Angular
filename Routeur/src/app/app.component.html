@@ -1,0 +1,17 @@
+<nav class="nav">
+<span class="nav__menu">
+<a class="nav__item_unselected"
+   href=""
+   [routerLink]="['/']"
+   routerLinkActive="nav__item_selected"
+   [routerLinkActiveOptions]="{exact:true}">Home</a>
+</span>
+  <span class="nav__menu">
+<a class="nav__item_unselected"
+   href=""
+   [routerLink]="['/detail', idDetail]"
+   routerLinkActive="nav__item_selected"
+   [routerLinkActiveOptions]="{exact:true}">Detail</a>
+</span>
+</nav>
+<router-outlet></router-outlet>
