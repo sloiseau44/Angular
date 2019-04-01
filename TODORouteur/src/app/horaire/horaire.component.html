@@ -1,3 +1,6 @@
-<p>
-  horaire works!
-</p>
+<ul>
+  <li *ngFor="let day of pub.openDays">
+    {{day}}
+  </li>
+</ul>
+de {{pub.openHours.start}}h à {{pub.openHours.end}}h

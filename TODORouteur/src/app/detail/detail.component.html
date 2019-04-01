@@ -1,3 +1,8 @@
-<p>
-  detail works!
-</p>
+<ul>
+  <li>{{pub.name}}</li>
+  <li>{{pub.owner.firstName}} {{pub.owner.lastName}} {{pub.owner.mail}}</li>
+  <li><button (click)="handleHours()">Horaires d'ouverture</button></li>
+  <li><button (click)="handleBeers()">Bières disponibles</button></li>
+
+</ul>
+<router-outlet></router-outlet>

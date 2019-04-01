@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, ParamMap} from "@angular/router";
+import {PubServices} from "../services/pubService";
+import {Pub} from "../model/Pub";
 
 @Component({
   selector: 'app-biere',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BiereComponent implements OnInit {
 
-  constructor() { }
+  pub:Pub;
+  name:string;
 
-  ngOnInit() {
+  constructor(private route:ActivatedRoute, private pubServices : PubServices) { }
+
+  async ngOnInit() {
+    this.route.paramMap.subscribe((params: ParamMap) =>{
+      this.name=params.get('pubName');
+    });
+
+    this.pub = await this.pubServices.findPub(this.name);
   }
+
+
 
 }

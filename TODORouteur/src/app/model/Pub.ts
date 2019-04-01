@@ -5,7 +5,7 @@ import {Beer} from "./Beer";
 
 export class Pub{
   constructor(public name:string,
-              public ower:Owner,
+              public owner:Owner,
               public openDays:string[],
               public openHours:Hours,
               public beers:Beer[]){}

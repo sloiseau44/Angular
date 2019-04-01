@@ -15,4 +15,15 @@ export class PubServices {
       return pub;
     })
   }
+
+  async findPub(name:string){
+    let pubToFind:Pub;
+    let pubs = await this.getTodoJson();
+    pubs.forEach((pub)=>{
+      if(pub.name===name){
+        pubToFind=pub;
+      }
+    })
+    return pubToFind;
+  }
 }

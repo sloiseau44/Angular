@@ -7,6 +7,7 @@ export class PubsResolvers implements Resolve<any> {
 
   constructor() {
   }
+
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
     return [{}]
   }
