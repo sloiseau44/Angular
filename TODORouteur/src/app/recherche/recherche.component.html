@@ -1,0 +1,12 @@
+<ul>
+  <li *ngFor="let pub of pubs">
+    {{pub.name}}
+  </li>
+</ul>
+
+<div>
+  <p>Trovuer un pub</p>
+  <input type="text"
+         (change)="handleRecherche($event)">
+  <button (click)="addRecherche()">Rechercher</button>
+</div>

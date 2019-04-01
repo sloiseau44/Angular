@@ -23,15 +23,16 @@ export class TodoContainerComponent implements OnInit {
       .then((todoFinal) =>{this.todoList = todoFinal});*/
   }
 
-  async handleTodoAdd(todo) {
-    this.todoList = await this.todoServices.handleTodoAdd(todo);
+  async handleTodoAdd(title) {
+    this.todoList = await this.todoServices.handleTodoAdd(title);
   }
 
   async handleReset(){
     this.todoList = await this.todoServices.handleReset();
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.todoList = await this.todoServices.getTodoJson();
   }
 
 }

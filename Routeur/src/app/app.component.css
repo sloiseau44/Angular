@@ -1,0 +1,11 @@
+.nav__item_selected, .nav__item_unselected{
+  margin:20px;
+}
+
+.nav__item_unselected{
+  color:darkorange;
+}
+
+.nav__item_selected{
+  color:red;
+}

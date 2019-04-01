@@ -15,17 +15,17 @@ export class TodoFormComponent implements OnInit {
   title:string;
 
   @Output()
-  todoAdd:EventEmitter<Todo> = new EventEmitter<Todo>();
+  todoAdd:EventEmitter<string> = new EventEmitter<string>();
 
   @Output()
   reset:EventEmitter<void> = new EventEmitter<void>();
 
   handleInputText(event) {
-    this.todo = new Todo(event.target.value, false);
+    this.title = event.target.value;
   }
 
   addTodo(){
-    this.todoAdd.emit(this.todo);
+    this.todoAdd.emit(this.title);
   }
 
   resetTodo(){
