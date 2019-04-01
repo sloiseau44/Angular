@@ -34,7 +34,7 @@ export class RechercheComponent implements OnInit {
     if(this.pubToFind===undefined){
       alert("Le pub choisit n'existe pas");
     }else {
-      this.router.navigate([PATH_DETAIL], { fragment:this.pubToFind.name});
+      this.router.navigate([PATH_DETAIL, this.pubToFind.name]);
     }
   }
 

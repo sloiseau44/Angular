@@ -19,7 +19,7 @@ export class DetailComponent implements OnInit {
   async ngOnInit() {
     this.pubs = await this.pubServices.getTodoJson();
     this.route.paramMap.subscribe((params: ParamMap) =>{
-      console.log(params.get('this.pubToFind.name'));
+      this.name=params.get('pubName');
     });
   }
 

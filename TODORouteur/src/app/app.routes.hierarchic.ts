@@ -8,7 +8,7 @@ import {HoraireComponent} from "./horaire/horaire.component";
 
 export const ROUTES: Routes = [
   {path: PATH_RECHERCHE, component: RechercheComponent},
-  {path: PATH_DETAIL, component: DetailComponent,
+  {path: PATH_DETAIL+"/:pubName", component: DetailComponent,
     children: [
       { path: PATH_DETAIL_BIERE, component: BiereComponent},
       { path: PATH_DETAIL_HORAIRE, component: HoraireComponent},
