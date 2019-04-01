@@ -1,0 +1,54 @@
+<h4>Formulaire</h4>
+<form (ngSubmit)="handleSubmit()" [formGroup]="personneForm">
+  <div>
+    <label>Nom: </label>
+    <input formControlName="nom">
+    <div *ngIf="nomCtrl.dirty && nomCtrl.hasError('required')" class="erreur">
+      Le nom est requis
+    </div>
+    <div *ngIf="nomCtrl.dirty && nomCtrl.hasError('pattern')" class="erreur">
+      Le nom doit commencer avec une majuscule
+    </div>
+  </div>
+  <div>
+    <label>Prénom: </label>
+    <input formControlName="prenom">
+    <div *ngIf="prenomCtrl.dirty && prenomCtrl.hasError('required')" class="erreur">
+      Le prénom est requis
+    </div>
+
+  </div>
+  <div>
+    <label>Téléphone: </label>
+    <input formControlName="telephone">
+    <div *ngIf="telephoneCtrl.dirty && telephoneCtrl.hasError('maxlength')  || telephoneCtrl.dirty && telephoneCtrl.hasError('minlength') || telephoneCtrl.dirty && telephoneCtrl.hasError('pattern')" class="erreur">
+      Le numéro de téléphone doit comporter 10 chiffres
+    </div>
+  </div>
+  <div>
+    <label>Email: </label>
+    <input formControlName="email">
+    <div *ngIf="emailCtrl.dirty && emailCtrl.hasError('email')" class="erreur">
+      L'email n'est pas valide
+    </div>
+    <div *ngIf="emailCtrl.dirty && emailCtrl.hasError('required')" class="erreur">
+      L'email est requis
+    </div>
+  </div>
+
+  <div>
+    <label for="connaissances-select">Choississez une/des connaissance(s)</label>
+
+    <select id="connaissances-select" formControlName="connaissances">
+      <option value="JavaScript">JavaScript</option>
+      <option value="TypeScript">TypeScript</option>
+      <option value="Angular">Angular</option>
+    </select>
+  </div>
+
+  <button type="submit"
+          [disabled]="personneForm.invalid">
+        Valider
+  </button>
+  <button type="reset" (click)="handleClear()">Reset</button>
+</form>
